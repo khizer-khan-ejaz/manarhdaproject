@@ -131,8 +131,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'manar/media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-from pathlib  import django_heroku
 
 # All of your settings here
 
-django_heroku.settings(locals())
