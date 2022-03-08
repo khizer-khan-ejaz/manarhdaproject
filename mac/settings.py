@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@7ww6oxvk@r6y+*ev$d4qns-57b8bjqsst*0)%9x226fs!$0e*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'manarhuda.herokuapp.com',]
+ALLOWED_HOSTS = ['127.0.0.1', 'https://manarhuda1.herokuapp.com/',]
 
 
 # Application definition
@@ -121,10 +121,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR, "manar/static/")
-MEDIA_ROOT= os.path.join(BASE_DIR, "media")
-MEDIA_URL="/media/"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'manar/media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+from pathlib  import django_heroku
+
+# All of your settings here
+
+django_heroku.settings(locals())
